@@ -1,0 +1,10 @@
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Application\Game.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\Game.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\GameLogic\SubStates\IntroSubState.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\IntroSubState.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\States\GameState.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\GameState.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Infrastructure\ResourceManager\ResourceManager.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\ResourceManager.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\GameLogic\SubStates\LevelOneSubState.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\LevelOneSubState.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\main.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\main.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\States\MenuState.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\MenuState.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\States\PauseState.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\PauseState.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\GameLogic\Player.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\Player.obj
+C:\Users\theof\source\repos\PROJJECT\PROJJECT\Domain\GameLogic\Monster.cpp;C:\Users\theof\source\repos\PROJJECT\PROJJECT\x64\Debug\Monster.obj

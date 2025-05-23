@@ -1,0 +1,11 @@
+[
+  {
+    "speaker": "Player",
+    "text": "It was too difficult...",
+    "image": [ "level_2.png", "monster_1.png" ]
+  },
+  {
+    "speaker": "Player",
+    "text": "But I need to fight. For Arcamun."
+  }
+]

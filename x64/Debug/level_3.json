@@ -1,0 +1,11 @@
+[
+  {
+    "speaker": "Player",
+    "text": "Final level!",
+    "image": [ "level_3.png", "monster_1.png" ]
+  },
+  {
+    "speaker": "Player",
+    "text": "Arcamun is here!"
+  }
+]

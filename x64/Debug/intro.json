@@ -1,0 +1,11 @@
+[
+  {
+    "speaker": "Player",
+    "text": "Where am I...? What is this place?",
+    "image": "intro.png"
+  },
+  {
+    "speaker": "Player",
+    "text": "We've got to get out of here."
+  }
+]

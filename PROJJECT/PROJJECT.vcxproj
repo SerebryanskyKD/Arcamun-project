@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application\Game.cpp" />
+    <ClCompile Include="Domain\GameLogic\Probability.cpp" />
+    <ClCompile Include="Domain\GameLogic\SubStates\IntroSubState.cpp" />
+    <ClCompile Include="Domain\States\GameState.cpp" />
+    <ClCompile Include="Domain\GameLogic\SubStates\EndingSubState.cpp" />
+    <ClCompile Include="Infrastructure\ResourceManager\ResourceManager.cpp" />
+    <ClCompile Include="Domain\GameLogic\SubStates\LevelSubState.cpp" />
+    <ClCompile Include="Domain\GameLogic\SubStates\LevelNarrativePhase.cpp" />
+    <ClCompile Include="Domain\GameLogic\SubStates\LevelCombatPhase.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Domain\States\MenuState.cpp" />
+    <ClCompile Include="Domain\States\PauseState.cpp" />
+    <ClCompile Include="Domain\GameLogic\Player.cpp" />
+    <ClCompile Include="Domain\GameLogic\Monster.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application\Game.h" />
+    <ClInclude Include="Domain\GameLogic\NotificationManager.h" />
+    <ClInclude Include="Domain\GameLogic\Probability.h" />
+    <ClInclude Include="UI\ImageButton.h" />
+    <ClInclude Include="Domain\GameLogic\InventoryItem.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\IntroSubState.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\LevelPhase.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\SubState.h" />
+    <ClInclude Include="Domain\States\State.h" />
+    <ClInclude Include="Domain\States\GameState.h" />
+    <ClInclude Include="Domain\States\StateContext.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\EndingSubState.h" />
+    <ClInclude Include="External\json.hpp" />
+    <ClInclude Include="Infrastructure\ResourceManager\ResourceManager.h" />
+    <ClInclude Include="Domain\States\MenuState.h" />
+    <ClInclude Include="Domain\States\PauseState.h" />
+    <ClInclude Include="Domain\GameLogic\Player.h" />
+    <ClInclude Include="Domain\GameLogic\Monster.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\LevelSubState.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\LevelNarrativePhase.h" />
+    <ClInclude Include="Domain\GameLogic\SubStates\LevelCombatPhase.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Fonts\chilispepper.ttf">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\intro.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_1.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_2.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_3.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\intro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\level_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\monster_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\level_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\level_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\bump.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\menu.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\pause.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\good_end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\bad_end.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\monster_2.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\monster_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\+hp.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\staff.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\staff_with_magic_stone.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\sword_and_shield.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\potion_defense.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\potion_intuition.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\potion_perception.png" />
+    <CopyFileToFolders Include="Infrastructure\Assets\Images\potion_strength.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\Music\music.ogg">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{f8e9efe9-4818-4dc5-b768-fd3b05fd1075}</ProjectGuid>
+    <RootNamespace>PROJJECT</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>SFML_STATIC;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>..\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>..\SFML-2.6.2-windows-vc17-64-bit\SFML-2.6.2\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-system-s-d.lib;sfml-main-d.lib;sfml-window-s-d.lib;sfml-audio-s-d.lib;sfml-graphics-s-d.lib;gdi32.lib;opengl32.lib;winmm.lib;glu32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

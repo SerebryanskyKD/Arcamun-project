@@ -1,10 +1,7 @@
 #include "GameState.h"
 #include "../GameLogic/SubStates/IntroSubState.h"
 
-GameState::GameState(StateContext& context)
-    : State(context),
-    player(*this)
-{
+GameState::GameState(StateContext& context) : State(context), player(*this) {
     player.initUI();
     changeSubState(std::make_unique<IntroSubState>(*this));
 }
@@ -12,6 +9,7 @@ GameState::GameState(StateContext& context)
 void GameState::handleInput() {
     auto& window = context.getWindow();
     sf::Event event;
+
     if (currentSubState) {
         currentSubState->handleInput(event);
     }

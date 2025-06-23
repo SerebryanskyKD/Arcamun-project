@@ -125,10 +125,6 @@
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="Infrastructure\Assets\Fonts\chilispepper.ttf" />
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\intro.json" />
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_1.json" />
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_2.json" />
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_3.json" />
     <CopyFileToFolders Include="Infrastructure\Assets\Images\intro.png">
       <Filter>Файлы ресурсов</Filter>
     </CopyFileToFolders>
@@ -193,5 +189,8 @@
       <Filter>Файлы ресурсов</Filter>
     </CopyFileToFolders>
     <CopyFileToFolders Include="Infrastructure\Assets\Music\music.ogg" />
+    <CopyFileToFolders Include="Infrastructure\Assets\json\dialogues.json" />
+    <CopyFileToFolders Include="Infrastructure\Assets\json\weapons.json" />
+    <CopyFileToFolders Include="Infrastructure\Assets\json\player_stats.json" />
   </ItemGroup>
 </Project>

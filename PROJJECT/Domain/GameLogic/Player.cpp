@@ -1,14 +1,25 @@
 #include "Player.h"
 #include "../States/GameState.h"
 #include "../../Infrastructure/ResourceManager/ResourceManager.h"
+#include "InventoryItem.h"
 
-Player::Player(GameState& gameState)
-    : gameState(gameState),
-    equippedWeapon(Weapon::Type::SwordAndShield,
-        "Sword and Shield",
-        6, 6, 0, 0,
-        &gameState.getContext().getResourceManager().getTexture("sword_and_shield"))
+Player::Player(GameState& gameState) : gameState(gameState)
 {
+    const auto& statsJson = gameState.getContext().getResourceManager().getJSON("player_stats");
+    baseStats.loadFromJSON(statsJson);
+
+    const auto& weaponData = gameState.getContext().getResourceManager().getJSON("weapons")["sword_and_shield"];
+
+    equippedWeapon = Weapon(
+        weaponTypeFromString(weaponData["type"]),
+        weaponData["name"],
+        weaponData["attack"],
+        weaponData["defense"],
+        weaponData["intuition"],
+        weaponData["perception"],
+        &gameState.getContext().getResourceManager().getTexture("sword_and_shield")
+    );
+
     baseStats.applyBonuses(equippedWeapon);
 
     inventory.addWeapon(equippedWeapon);
@@ -54,7 +65,6 @@ void Player::updateInventoryIcons() {
 
     float columnSpacing = 5.f;
 
-    // Оружие
     for (size_t i = 0; i < weapons.size(); ++i) {
         ClickableInventoryItem item;
         item.weapon = &weapons[i];
@@ -67,7 +77,6 @@ void Player::updateInventoryIcons() {
         weaponIcons.push_back(std::move(item));
     }
 
-    // Зелья
     int visiblePotionIndex = 0;
     for (const auto& potion : potions) {
         if (potion.amount <= 0) continue;

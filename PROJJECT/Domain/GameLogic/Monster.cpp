@@ -1,7 +1,6 @@
 #include "Monster.h"
 
-Monster::Monster(int level, const sf::Texture& texture, int maxHP)
-    : level(level), maxHP(maxHP), hp(maxHP)
+Monster::Monster(int level, const sf::Texture& texture, int maxHP) : level(level), maxHP(maxHP), hp(maxHP)
 {
     sf::Vector2u windowSize = sf::Vector2u(1920, 1080);
 

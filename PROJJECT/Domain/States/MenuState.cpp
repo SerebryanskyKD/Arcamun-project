@@ -2,6 +2,7 @@
 #include "GameState.h"
 
 MenuState::MenuState(StateContext& context) : State(context) {
+
     auto& font = context.getResourceManager().getFont();
     auto& window = context.getWindow();
 

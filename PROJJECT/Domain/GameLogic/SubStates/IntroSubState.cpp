@@ -3,20 +3,14 @@
 #include "LevelSubState.h"
 
 IntroSubState::IntroSubState(GameState& gameState) : SubState(gameState) {
+
     auto& font = gameState.getContext().getResourceManager().getFont();
     auto& window = gameState.getContext().getWindow();
 
     dialogueText.setFont(font);
     dialogueText.setCharacterSize(50);
     dialogueText.setFillColor(sf::Color::White);
-    dialogueLines = {
-    "...",
-    "I finally made it to this dungeon.",
-    "According to my friend's message, there may be an Arcamun in it!",
-    "But where is he?",
-    "Well, there's no time, I'll go alone.",
-    "I have to get this treasure to save everyone."
-    };
+    dialogueLines = gameState.getContext().getResourceManager().getJSON("dialogues")["intro"].get<std::vector<std::string>>();
     dialogueText.setString(dialogueLines[0]);
 
     sf::FloatRect textRect = dialogueText.getLocalBounds();
@@ -52,6 +46,7 @@ void IntroSubState::handleInput(sf::Event& event) {
 
         if (event.type == sf::Event::KeyPressed && event.key.code == sf::Keyboard::Space) {
             currentLine++;
+
             if (currentLine < dialogueLines.size()) {
                 dialogueText.setString(dialogueLines[currentLine]);
                 sf::FloatRect textRect = dialogueText.getLocalBounds();
@@ -61,7 +56,6 @@ void IntroSubState::handleInput(sf::Event& event) {
                 gameState.changeSubState(std::make_unique<LevelSubState>(gameState, 1));
             }
         }
-
     }
 }
 

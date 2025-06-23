@@ -28,6 +28,10 @@ ResourceManager::ResourceManager() {
     textures["staff_magic"].loadFromFile("staff_with_magic_stone.png");
     textures["bump"].loadFromFile("bump.png");
     textures["search"].loadFromFile("search.png");
+
+    loadJSON("player_stats", "player_stats.json");
+    loadJSON("weapons", "weapons.json");
+    loadJSON("dialogues", "dialogues.json");
 }
 
 sf::Font& ResourceManager::getFont() {
@@ -36,4 +40,20 @@ sf::Font& ResourceManager::getFont() {
 
 sf::Texture& ResourceManager::getTexture(const std::string& name) {
     return textures.at(name);
+}
+
+void ResourceManager::loadJSON(const std::string& key, const std::string& filename) {
+    std::ifstream file(filename);
+
+    if (!file.is_open()) {
+        throw std::runtime_error("Could not open JSON file: " + filename);
+    }
+
+    json j;
+    file >> j;
+    jsonDataMap[key] = j;
+}
+
+const json& ResourceManager::getJSON(const std::string& key) const {
+    return jsonDataMap.at(key);
 }

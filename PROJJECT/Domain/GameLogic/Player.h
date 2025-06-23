@@ -2,16 +2,12 @@
 #include <string>
 #include <vector>
 #include "InventoryItem.h"
+#include <../../External/json.hpp>
 
 class GameState;
 
 struct Stats {
-    int health = 100;
-    int maxHealth = 100;
-    int strength = 5;
-    int defense = 5;
-    int intuition = 5;
-    int perception = 15;
+    int health, maxHealth, strength, defense, intuition, perception;
 
     void applyBonuses(const Weapon& weapon) {
         strength += weapon.attackBonus;
@@ -25,6 +21,15 @@ struct Stats {
         defense -= weapon.defenseBonus;
         intuition -= weapon.intuitionBonus;
         perception -= weapon.perceptionBonus;
+    }
+
+    void loadFromJSON(const nlohmann::json& json) {
+        if (json.contains("health")) health = json["health"];
+        if (json.contains("maxHealth")) maxHealth = json["maxHealth"];
+        if (json.contains("strength")) strength = json["strength"];
+        if (json.contains("defense")) defense = json["defense"];
+        if (json.contains("intuition")) intuition = json["intuition"];
+        if (json.contains("perception")) perception = json["perception"];
     }
 };
 

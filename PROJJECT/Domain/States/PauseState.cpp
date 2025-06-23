@@ -2,6 +2,7 @@
 #include "GameState.h"
 
 PauseState::PauseState(StateContext& context) : State(context) {
+
     auto& font = context.getResourceManager().getFont();
     auto& window = context.getWindow();
 

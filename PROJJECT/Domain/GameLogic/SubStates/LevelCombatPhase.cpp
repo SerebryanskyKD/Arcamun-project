@@ -3,18 +3,9 @@
 #include "EndingSubState.h"
 #include <iostream>
 
-LevelCombatPhase::LevelCombatPhase(GameState& gameState, int level)
-     : gameState(gameState),
-    player(gameState.getPlayer()),
-    monster(level, gameState.getContext().getResourceManager().getTexture("monster_" + std::to_string(level)), 100 * level),
-    level(level),
-    notificationManager(
-        gameState.getContext().getResourceManager().getFont(),
-        sf::Vector2f(
-            static_cast<float>(gameState.getContext().getWindow().getSize().x) / 2.f,
-            50.f
-        )
-    )
+LevelCombatPhase::LevelCombatPhase(GameState& gameState, int level) : gameState(gameState), player(gameState.getPlayer()),
+    monster(level, gameState.getContext().getResourceManager().getTexture("monster_" + std::to_string(level)), 100 * level), level(level),
+    notificationManager(gameState.getContext().getResourceManager().getFont(), sf::Vector2f( static_cast<float>(gameState.getContext().getWindow().getSize().x) / 2.f, 50.f))
 {
     std::string bgKey = "level_" + std::to_string(level);
     auto& bgTexture = gameState.getContext().getResourceManager().getTexture(bgKey);
@@ -27,17 +18,9 @@ LevelCombatPhase::LevelCombatPhase(GameState& gameState, int level)
     auto& res = gameState.getContext().getResourceManager();
     float scale = 0.5f;
 
-    attackButton = std::make_unique<ImageButton>(
-        res.getTexture("bump"),
-        sf::Vector2f(windowSize.x/2 - 400.f, windowSize.y - 270.f),
-        0.25
-    );
+    attackButton = std::make_unique<ImageButton>(res.getTexture("bump"), sf::Vector2f(windowSize.x/2 - 400.f, windowSize.y - 270.f), 0.25);
 
-    searchButton = std::make_unique<ImageButton>(
-        res.getTexture("search"),
-        sf::Vector2f(windowSize.x/2 + 0.f, windowSize.y - 270.f),
-        0.25
-    );
+    searchButton = std::make_unique<ImageButton>(res.getTexture("search"), sf::Vector2f(windowSize.x/2 + 0.f, windowSize.y - 270.f), 0.25);
 }
 
 void LevelCombatPhase::handleInput(sf::Event& event) {
@@ -68,20 +51,30 @@ void LevelCombatPhase::handleInput(sf::Event& event) {
             if (monster.isDead()) {
                 finished = true;
                 if (level == 1) {
-                    //notificationManager.add("You found a STAFF!");
+                    const auto& weaponData = gameState.getContext().getResourceManager().getJSON("weapons")["staff"];
+
                     player.getInventory().addWeapon(Weapon(
-                        Weapon::Type::Staff,
-                        "Staff",
-                        15, 15, 3, 10,
+                        weaponTypeFromString(weaponData["type"]),
+                        weaponData["name"],
+                        weaponData["attack"],
+                        weaponData["defense"],
+                        weaponData["intuition"],
+                        weaponData["perception"],
                         &gameState.getContext().getResourceManager().getTexture("staff")
                     ));
+
                     player.updateInventoryIcons();
                 }
                 if (level == 2) {
+                    const auto& weaponData = gameState.getContext().getResourceManager().getJSON("weapons")["staff_magic"];
+
                     player.getInventory().addWeapon(Weapon(
-                        Weapon::Type::EnchantedStaff,
-                        "Enchanted Staff",
-                        25, 25, 6, 20,
+                        weaponTypeFromString(weaponData["type"]),
+                        weaponData["name"],
+                        weaponData["attack"],
+                        weaponData["defense"],
+                        weaponData["intuition"],
+                        weaponData["perception"],
                         &gameState.getContext().getResourceManager().getTexture("staff_magic")
                     ));
                     player.updateInventoryIcons();
@@ -97,7 +90,7 @@ void LevelCombatPhase::handleInput(sf::Event& event) {
                 finished = true;
             }
             else {
-                int monsterDamage = level * 15;
+                int monsterDamage = level * 10;
                 player.takeDamage(monsterDamage);
 
                 float perceptionChance = static_cast<float>(player.getStats().perception * 2);

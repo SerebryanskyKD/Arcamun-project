@@ -1,5 +1,4 @@
 #pragma once
-
 #include <memory>
 #include "State.h"
 #include "../GameLogic/Player.h"

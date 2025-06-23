@@ -63,24 +63,6 @@
     </CopyFileToFolders>
   </ItemGroup>
   <ItemGroup>
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\intro.json">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_1.json">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_2.json">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
-    <CopyFileToFolders Include="Infrastructure\Assets\Dialogues\level_3.json">
-      <FileType>Document</FileType>
-    </CopyFileToFolders>
-  </ItemGroup>
-  <ItemGroup>
     <CopyFileToFolders Include="Infrastructure\Assets\Images\intro.png" />
   </ItemGroup>
   <ItemGroup>
@@ -133,6 +115,19 @@
   </ItemGroup>
   <ItemGroup>
     <CopyFileToFolders Include="Infrastructure\Assets\Music\music.ogg">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\json\dialogues.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+    <CopyFileToFolders Include="Infrastructure\Assets\json\weapons.json">
+      <FileType>Document</FileType>
+    </CopyFileToFolders>
+  </ItemGroup>
+  <ItemGroup>
+    <CopyFileToFolders Include="Infrastructure\Assets\json\player_stats.json">
       <FileType>Document</FileType>
     </CopyFileToFolders>
   </ItemGroup>

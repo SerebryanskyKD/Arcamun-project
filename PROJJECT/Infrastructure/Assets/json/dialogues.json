@@ -1,0 +1,47 @@
+{
+  "intro": [
+    "...",
+    "I finally made it to this dungeon.",
+    "According to my friend's message, there may be an Arcamun in it!",
+    "But where is he?",
+    "Well, there's no time, I'll go alone.",
+    "I have to get this treasure to save everyone."
+  ],
+  "ending": {
+    "good": [
+      "YEAH! I'm alive!",
+      "This is a victory.",
+      "That harpy was a most dangerous opponent.",
+      "And all the others I had to fight could have killed me.",
+      "But I did it.",
+      "And all the hardship was worth it, because I have Arcamun!",
+      "And now I can save everyone.",
+      "But on Monday.",
+      "I'm tired for today, I'm going to lie down."
+    ],
+    "bad": [
+      "No...",
+      "Are those tears?",
+      "Did I let everyone down?",
+      "But I tried.",
+      "I sent a letter that Arcamun is probably here.",
+      "They'll probably send someone else.",
+      "I hope he has better luck than me.",
+      "I'm sorry..."
+    ]
+  },
+  "levels": {
+    "1": {
+      "pre": ["I must be careful.", "A lot of people who come in here don't come back.", "Well, I can find a lot of useful things on earth if I look.", "Wait, is that skeleton moving?", "Basically I can try to find a way out and rush past him.", "But then I'd miss the opportunity to find a useful weapon.", "Okay, I'll decide during the fight.", "It's attacking!"],
+      "post": ["Ughhhh... There really might be a treasure here.", "Otherwise, the skeleton wouldn't have come to life to protect it."]
+    },
+    "2": {
+      "pre": ["These columns have been here a long time. But who lit them?", "Oh, a goblin, of course. There's always one in a place like this.", "He'll be harder to fight than a skeleton puppet."],
+      "post": ["I hate those green crows.", "Always getting in the way.", "And because they're greedy, they'll do anything.", "I could have died because of him!", "Well, okey. Now I'm ready to go all the way."]
+    },
+    "3": {
+      "pre": ["This is the deepest part of the dungeon.", "Is there lava underneath me?", "It's hard for me to see or breathe.", "But I feel like that's not the problem.", "Oh? Oh, no. Harpy?", "She's holding an Arcamun!", "I can't just run away like that!"],
+      "post": ["...", "I can't believe it myself, but..."]
+    }
+  }
+}

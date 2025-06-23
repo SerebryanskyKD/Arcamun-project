@@ -8,33 +8,35 @@ struct InventoryItem {
 };
 
 struct Weapon : public InventoryItem {
+    Weapon() = default;
+
     enum class Type {
         SwordAndShield,
         Staff,
         EnchantedStaff
     };
     
-    bool isWeapon() const override { return true; }
+    bool isWeapon() const override { 
+        return true;
+    }
 
     Type type;
     std::string name;
-    int attackBonus = 0;
-    int defenseBonus = 0;
-    int intuitionBonus = 0;
-    int perceptionBonus = 0;
-
+    int attackBonus, defenseBonus, intuitionBonus, perceptionBonus;
     sf::Texture* texture = nullptr;
 
-    Weapon(Type type,
-        const std::string& name,
-        int atk, int def, int intu, int perc,
-        sf::Texture* texture = nullptr)
-        : type(type), name(name),
-        attackBonus(atk), defenseBonus(def),
-        intuitionBonus(intu), perceptionBonus(perc),
-        texture(texture) {
+    Weapon(Type type, const std::string& name, int atk, int def, int intu, int perc, sf::Texture* texture = nullptr)
+        : type(type), name(name), attackBonus(atk), defenseBonus(def), intuitionBonus(intu), perceptionBonus(perc), texture(texture) {
     }
 };
+
+inline Weapon::Type weaponTypeFromString(const std::string& typeStr) {
+
+    if (typeStr == "SwordAndShield") return Weapon::Type::SwordAndShield;
+    if (typeStr == "Staff") return Weapon::Type::Staff;
+    if (typeStr == "EnchantedStaff") return Weapon::Type::EnchantedStaff;
+    throw std::invalid_argument("Unknown Weapon Type: " + typeStr);
+}
 
 struct Potion : public InventoryItem {
     enum class Type {
@@ -45,7 +47,9 @@ struct Potion : public InventoryItem {
         Health
     };
 
-    bool isWeapon() const override { return false; }
+    bool isWeapon() const override {
+        return false;
+    }
 
     Type type;
     std::string name;

@@ -1,0 +1,26 @@
+{
+  "sword_and_shield": {
+    "type": "SwordAndShield",
+    "name": "Sword and Shield",
+    "attack": 6,
+    "defense": 6,
+    "intuition": 0,
+    "perception": 0
+  },
+  "staff": {
+    "type": "Staff",
+    "name": "Staff",
+    "attack": 15,
+    "defense": 15,
+    "intuition": 3,
+    "perception": 10
+  },
+  "staff_magic": {
+    "type": "EnchantedStaff",
+    "name": "Enchanted Staff",
+    "attack": 25,
+    "defense": 25,
+    "intuition": 6,
+    "perception": 20
+  }
+}

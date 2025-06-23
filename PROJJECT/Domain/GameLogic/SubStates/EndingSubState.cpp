@@ -3,40 +3,15 @@
 #include "../../States/MenuState.h"
 #include <iostream>
 
-EndingSubState::EndingSubState(GameState& gameState, bool goodEnding)
-    : SubState(gameState) {
+EndingSubState::EndingSubState(GameState& gameState, bool goodEnding) : SubState(gameState) {
 
     auto& font = gameState.getContext().getResourceManager().getFont();
     auto& window = gameState.getContext().getWindow();
 
     std::string textureKey;
-    if (goodEnding) {
-        textureKey = "good_end";
-        dialogueLines = {
-            "YEAH! I'm alive!",
-            "This is a victory.",
-            "That harpy was a most dangerous opponent.",
-            "And all the others I had to fight could have killed me.",
-            "But I did it.",
-            "And all the hardship was worth it, because I have Arcamun!",
-            "And now I can save everyone.",
-            "But on Monday.",
-            "I'm tired for today, I'm going to lie down."
-        };
-    }
-    else {
-        textureKey = "bad_end";
-        dialogueLines = {
-            "No...",
-            "Are those tears?"
-            "Did I let everyone down?",
-            "But I tried.",
-            "I sent a letter that Arcamun is probably here.",
-            "They'll probably send someone else.",
-            "I hope he has better luck than me.",
-            "I'm sorry...",
-        };
-    }
+    auto& j = gameState.getContext().getResourceManager().getJSON("dialogues");
+    dialogueLines = j["ending"][goodEnding ? "good" : "bad"].get<std::vector<std::string>>();
+    textureKey = goodEnding ? "good_end" : "bad_end";
 
     endingText.setFont(font);
     endingText.setCharacterSize(50);

@@ -4,8 +4,7 @@
 #include "EndingSubState.h"
 
 
-LevelSubState::LevelSubState(GameState& gameState, int level)
-    : SubState(gameState), level(level), currentPhaseType(PhaseType::PreCombatNarrative) {
+LevelSubState::LevelSubState(GameState& gameState, int level) : SubState(gameState), level(level), currentPhaseType(PhaseType::PreCombatNarrative) {
      startNextPhase();
 }
 

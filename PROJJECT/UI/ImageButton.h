@@ -3,8 +3,7 @@
 
 class ImageButton {
 public:
-    ImageButton(const sf::Texture& texture, const sf::Vector2f& position, float scale)
-        : visible(true)
+    ImageButton(const sf::Texture& texture, const sf::Vector2f& position, float scale) : visible(true)
     {
         sprite.setTexture(texture);
         sprite.setScale(scale, scale);

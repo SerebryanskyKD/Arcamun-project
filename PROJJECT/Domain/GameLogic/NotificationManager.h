@@ -8,8 +8,7 @@ struct Notification {
     sf::Text sfText;
     float timeRemaining;
 
-    Notification(const std::string& msg, const sf::Font& font, float duration, sf::Vector2f position)
-        : text(msg), timeRemaining(duration)
+    Notification(const std::string& msg, const sf::Font& font, float duration, sf::Vector2f position) : text(msg), timeRemaining(duration)
     {
         sfText.setFont(font);
         sfText.setString(msg);
@@ -23,9 +22,7 @@ struct Notification {
 
 class NotificationManager {
 public:
-    NotificationManager(const sf::Font& font, sf::Vector2f windowCenterTop)
-        : font(font), position(windowCenterTop) {
-    }
+    NotificationManager(const sf::Font& font, sf::Vector2f windowCenterTop) : font(font), position(windowCenterTop) {}
 
     void add(const std::string& message, float duration = 1.0f) {
         notifications.emplace_back(message, font, duration, position);
@@ -36,8 +33,7 @@ public:
             notif.timeRemaining -= deltaTime;
 
         notifications.erase(
-            std::remove_if(notifications.begin(), notifications.end(),
-                [](const Notification& n) { return n.timeRemaining <= 0; }),
+            std::remove_if(notifications.begin(), notifications.end(), [](const Notification& n) { return n.timeRemaining <= 0; }),
             notifications.end());
     }
 
